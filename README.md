@@ -20,17 +20,30 @@ To analyze vendor and brand performance, optimize pricing and inventory, and pro
 
 ```mermaid
 flowchart TD
-    A[Define Business Problem] --> B[Collect Raw Data (CSV)]
-    B --> C[Ingest Data into Database (ETL Script)]
-    C --> D[Explore Data (SQL + Python)]
-    D --> E[Aggregate & Join Tables]
-    E --> F[Feature Engineering]
-    F --> G[Clean Data]
-    G --> H[Analyze & Visualize (Python)]
-    H --> I[Answer Business Questions]
-    I --> J[Create Power BI Dashboard]
-    J --> K[Generate Reports/Presentations]
-    K --> L[Document Project]
+    A[Define Business Problem]
+    B[Collect Raw Data (CSV)]
+    C[Ingest Data into Database (ETL Script)]
+    D[Explore Data (SQL + Python)]
+    E[Aggregate & Join Tables]
+    F[Feature Engineering]
+    G[Clean Data]
+    H[Analyze & Visualize (Python)]
+    I[Answer Business Questions]
+    J[Create Power BI Dashboard]
+    K[Generate Reports/Presentations]
+    L[Document Project]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
 ```
 
 ---
