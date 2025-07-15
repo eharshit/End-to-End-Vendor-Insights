@@ -1,110 +1,105 @@
-# End-to-End-Vendor-Insights
+# Vendor Performance Analysis Project
 
-## Project Overview
+## Overview
 
-This project is a company-standard, end-to-end data analytics solution for Vendor Performance Data Analytics using SQL, Python, Power BI, and reporting. It is designed to reflect real-world practices followed by top data analysts in industry, focusing on integrating multiple tools and skills to solve a genuine business problem.
+This is a real-world, company-standard data analytics project focused on analyzing vendor performance in the wholesale and retail industry. It integrates multiple tools — SQL, Python (Pandas), and Power BI — to simulate how a professional data analyst solves business problems end-to-end.
 
-### **Objective**
-To analyze vendor and brand performance, optimize pricing and inventory, and provide actionable insights for profitability improvement in a retail/wholesale context.
-
-### **Key Business Questions**
-- Identify underperforming brands needing promotional/pricing adjustments.
-- Determine top vendors contributing to sales and gross profit.
-- Analyze the impact of bulk purchasing on unit cost.
-- Assess inventory turnover to reduce holding costs.
-- Investigate profitability variance between high and low-performing vendors.
+> This is **not** a beginner project. It mirrors how analysts in actual companies handle large datasets, optimize SQL queries, build dashboards, and derive insights that directly impact business decisions.
 
 ---
 
-## Project Workflow
+## Business Problem
 
-```mermaid
-flowchart TD
-    A[Define Business Problem]
-    B[Collect Raw Data (CSV)]
-    C[Ingest Data into Database (ETL Script)]
-    D[Explore Data (SQL + Python)]
-    E[Aggregate & Join Tables]
-    F[Feature Engineering]
-    G[Clean Data]
-    H[Analyze & Visualize (Python)]
-    I[Answer Business Questions]
-    J[Create Power BI Dashboard]
-    K[Generate Reports/Presentations]
-    L[Document Project]
+Inefficient vendor performance leads to losses from poor pricing, low inventory turnover, and vendor dependency. The goal of this project is to:
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
-    I --> J
-    J --> K
-    K --> L
-```
+- Identify underperforming brands needing pricing/promotional adjustments
+- Determine top-performing vendors contributing to sales and profit
+- Analyze the impact of bulk purchasing on unit cost
+- Assess inventory turnover to reduce holding cost
+- Compare profitability between high- and low-performing vendors
 
 ---
 
-## Step-by-Step Process
+## Tech Stack
 
-### 1. **Define Business Problem**
-- Clearly state the business objectives and the key questions to be answered (e.g., vendor performance, pricing, inventory optimization).
-
-### 2. **Collect and Ingest Raw Data**
-- Source: Multiple CSV files (e.g., purchase, purchase prices, vendor invoice, inventory, sales).
-- Store all CSVs as tables in a relational database (SQLite for demo, but could be any RDBMS in production).
-- Write a Python script to ingest CSVs into the database, with logging for monitoring and error tracking.
-
-### 3. **Explore Database Tables, Merge & Clean Data (SQL)**
-- Explore the structure and content of all relevant tables in the database.
-- Merge tables as needed to bring together all necessary data.
-- Clean the data (handle missing values, fix types, remove inconsistencies).
-
-### 4. **Create Aggregated Table**
-- Aggregate the cleaned data into a summary table (e.g., vendor sales summary).
-- This table should contain all the features needed for analysis (sales, purchases, profit, etc.).
-- Store the aggregated table back into the database for easy access and to avoid repeated heavy computations.
-
-### 5. **Load Aggregated Table in Jupyter Notebook (Python)**
-- Use Python (Pandas, etc.) to load the aggregated data for deeper analysis.
-- Perform:
-  - Exploratory Data Analysis (EDA)
-  - Data Cleaning (if needed)
-  - Solving research/business questions
-  - Analyzing and interpreting findings
-
-### 6. **Create Dashboard in Power BI**
-- Visualize key findings and metrics using Power BI.
-- Build interactive dashboards for stakeholders to explore the data and insights.
-
-### 7. **Report Writing**
-- Document the process, findings, and recommendations.
-- Prepare presentations or written reports for stakeholders, management, or clients.
+- **SQL**: Data exploration, cleaning, aggregation
+- **Python (Pandas, SQLAlchemy)**: Data ingestion, EDA, scripting, logging
+- **Power BI**: Dashboard creation, visualization
+- **Jupyter Notebook**: Exploratory analysis and research questions
+- **SQLite**: Local relational database used for ease of testing and prototyping
 
 ---
 
-## Project Structure (Recommended)
+## Project Flow
 
-- `data/` – Raw CSV files
-- `logs/` – Log files for ETL and processing scripts
-- `scripts/` – Python scripts for ETL, aggregation, cleaning, and analysis
-- `notebooks/` – Jupyter notebooks for EDA and visualization
-- `output/` – Reports, presentations, and exported data
-- `README.md` – Project overview and instructions
+![Project Flow](./path-to-image/Vendor_Performance_Project_Diagram.png)
+
+1. **Define Business Problem**
+2. **Ingest CSVs to Database**  
+   - Use Python to read multiple CSVs and insert into SQLite
+   - Write a data ingestion script with logging
+3. **Explore & Clean Data in SQL**
+   - Explore tables
+   - Merge necessary fields
+   - Create aggregated table for further analysis
+4. **Save Aggregated Table**
+   - Store cleaned and joined data back into database
+5. **Load Aggregated Table into Jupyter Notebook**
+   - Use Python (Pandas) for EDA
+   - Solve business questions:
+     - Profitability by vendor
+     - Bulk discount patterns
+     - Inventory turnover
+6. **Create Power BI Dashboard**
+   - Visualize only meaningful insights
+   - Tailored to the business questions
+7. **Write Final Report**
+   - Structured summary of findings
+   - Insight-driven storytelling for stakeholders
 
 ---
 
-## Tools & Technologies
-- **Database:** SQLite (demo), can be replaced with PostgreSQL/MySQL
-- **ETL & Analysis:** Python (Pandas, SQLAlchemy, logging, etc.)
-- **Visualization:** Matplotlib, Seaborn, Power BI
-- **Reporting:** Power BI, Jupyter Notebooks, Python scripts
+## Data Sources
+
+Simulated wholesale industry data stored across multiple CSVs:
+
+- `begin_inventory.csv`
+- `end_inventory.csv`
+- `purchase.csv`
+- `purchase_prices.csv`
+- `sales.csv`
+- `vendor_invoice.csv`
+
+These were inserted into a SQLite database and used to simulate a real ETL pipeline.
 
 ---
 
-## Notes
-- This project is designed to be modular and scalable, following best practices for data analytics in a real-world business context.
-- The workflow diagram and documentation can be adapted as the project evolves.
+## Scripts Included
+
+- `ingestion_db.py`: Python script to ingest CSVs into SQLite with proper logging and directory structure
+- `eda.ipynb`: Jupyter notebook for data cleaning, feature engineering, and answering research questions
+- `dashboard.pbix`: Power BI file for interactive visualizations
+
+---
+
+## Key Skills Demonstrated
+
+- End-to-end project structuring
+- SQL for complex data joins and aggregations
+- Python scripting with logging and functions
+- Power BI dashboarding
+- Business problem solving with data
+- Report writing with real, actionable insights
+
+---
+
+## Final Notes
+
+- This project shows how to integrate multiple tools into one pipeline.
+- It's designed to be **portfolio-worthy** and align with what hiring managers expect.
+- All analysis and insights are tied directly to the defined business problem.
+
+---
+
+## Folder Structure
+
