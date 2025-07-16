@@ -1,0 +1,11 @@
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# SQLite DB file
+inventory.db
+
+# Local data files
+data/
