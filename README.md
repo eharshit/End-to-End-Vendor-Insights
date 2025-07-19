@@ -1,4 +1,4 @@
-# Vendor Performance Analysis Project
+# End to End Vendor Analysis
 
 ## Overview
 
@@ -30,9 +30,9 @@ Inefficient vendor performance leads to losses from poor pricing, low inventory 
 
 ---
 
-## Project Flow
+## Project Workflow
 
-![Project Flow](./path-to-image/Vendor_Performance_Project_Diagram.png)
+![Workflow](Workflow.png)
 
 1. **Define Business Problem**
 2. **Ingest CSVs to Database**  
@@ -61,11 +61,11 @@ Inefficient vendor performance leads to losses from poor pricing, low inventory 
 
 ## Data Sources
 
-Simulated wholesale industry data stored across multiple CSVs:
+Simulated wholesale industry data stored across multiple CSVs (in the `data/` folder):
 
 - `begin_inventory.csv`
 - `end_inventory.csv`
-- `purchase.csv`
+- `purchases.csv`
 - `purchase_prices.csv`
 - `sales.csv`
 - `vendor_invoice.csv`
@@ -74,11 +74,14 @@ These were inserted into a SQLite database and used to simulate a real ETL pipel
 
 ---
 
-## Scripts Included
+## Scripts & Notebooks
 
-- `ingestion_db.py`: Python script to ingest CSVs into SQLite with proper logging and directory structure
-- `eda.ipynb`: Jupyter notebook for data cleaning, feature engineering, and answering research questions
-- `dashboard.pbix`: Power BI file for interactive visualizations
+- **Ingestion.ipynb**: Jupyter notebook for ingesting CSVs into SQLite with logging and chunked loading for large files.
+- **Exploratory Data Analysis.ipynb**: Jupyter notebook for data cleaning, feature engineering, and answering research questions.
+- **inventory.db**: SQLite database containing all ingested and processed data tables.
+- **logs/**: Directory for log files generated during ingestion and processing.
+- **data/**: Contains all raw CSV data files.
+- **Workflow.png**: Visual diagram of the project workflow.
 
 ---
 
@@ -102,4 +105,32 @@ These were inserted into a SQLite database and used to simulate a real ETL pipel
 ---
 
 ## Folder Structure
+
+```
+End-to-End-Vendor-Insights-1/
+│
+├── data/                  # Raw CSV data files
+│   ├── begin_inventory.csv
+│   ├── end_inventory.csv
+│   ├── purchases.csv
+│   ├── purchase_prices.csv
+│   ├── sales.csv
+│   └── vendor_invoice.csv
+│
+├── logs/                  # Log files from ingestion and processing
+│   └── log
+│
+├── .vscode/               # VSCode project settings
+│   └── settings.json
+│
+├── .ipynb_checkpoints/    # Jupyter notebook checkpoints
+│   └── analysis-checkpoint.ipynb
+│
+├── Exploratory Data Analysis.ipynb  # EDA and business insights
+├── Ingestion.ipynb                 # Data ingestion notebook
+├── inventory.db                    # SQLite database
+├── Workflow.png                    # Project workflow diagram
+├── README.md                       # Project documentation
+└── .gitignore                      # Git ignore rules
+```
 
