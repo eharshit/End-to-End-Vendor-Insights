@@ -1,105 +1,62 @@
 # End to End Vendor Analysis
 
-## Overview
+## What This Project Does
 
-This project analyzes vendor performance in the wholesale and retail space. I used SQL, Python (Pandas), and Power BI to handle the full workflow — from cleaning raw data to generating business insights — the way it's done in actual industry settings.
----
+This project digs into vendor performance for a wholesale/retail business. The goal: find out which brands and vendors are helping or hurting the bottom line, spot pricing issues, and figure out where inventory is getting stuck. Everything here is built to answer real business questions, not just play with data.
 
-## Business Problem
+## Why It Matters
 
-Inefficient vendor performance leads to losses from poor pricing, low inventory turnover, and vendor dependency. The goal of this project is to:
+If you run a business, you want to know which vendors are making you money and which ones are dragging you down. This analysis shows you:
+- Who your top and bottom vendors are
+- Where you’re losing money on pricing or slow inventory
+- How bulk buying affects your costs
+- What you can do to boost profit and cut losses
 
-- Identify underperforming brands needing pricing/promotional adjustments
-- Determine top-performing vendors contributing to sales and profit
-- Analyze the impact of bulk purchasing on unit cost
-- Assess inventory turnover to reduce holding cost
-- Compare profitability between high- and low-performing vendors
+## How It Works
 
----
+- **Data Ingestion:** Loads big CSVs into a SQLite database using Python. Handles large files, logs every step.
+- **Data Cleaning & Analysis:** Uses SQL and Pandas to clean, join, and analyze the data. All the heavy lifting happens here.
+- **Visualization:** Power BI dashboard turns the numbers into something you can actually use.
 
-## Tech Stack
-
-- **SQL**: Data exploration, cleaning, aggregation
-- **Python (Pandas, SQLAlchemy)**: Data ingestion, EDA, scripting, logging
-- **Power BI**: Dashboard creation, visualization
-- **Jupyter Notebook**: Exploratory analysis and research questions
-- **SQLite**: Local relational database used for ease of testing and prototyping
-
----
-
-## Project Workflow
+## The Workflow
 
 ![Workflow](Workflow.png)
 
-1. **Define Business Problem**
-2. **Ingest CSVs to Database**  
-   - Use Python to read multiple CSVs and insert into SQLite
-   - Write a data ingestion script with logging
-3. **Explore & Clean Data in SQL**
-   - Explore tables
-   - Merge necessary fields
-   - Create aggregated table for further analysis
-4. **Save Aggregated Table**
-   - Store cleaned and joined data back into database
-5. **Load Aggregated Table into Jupyter Notebook**
-   - Use Python (Pandas) for EDA
-   - Solve business questions:
-     - Profitability by vendor
-     - Bulk discount patterns
-     - Inventory turnover
-6. **Create Power BI Dashboard**
-   - Visualize only meaningful insights
-   - Tailored to the business questions
-7. **Write Final Report**
-   - Structured summary of findings
-   - Insight-driven storytelling for stakeholders
+1. Define the business problem
+2. Ingest CSVs into a database (Python, SQLite)
+3. Clean and join data (SQL, Pandas)
+4. Analyze and answer business questions (Jupyter)
+5. Build a dashboard (Power BI)
+6. Write up the findings
 
----
+## What’s in the Data?
 
-## Data Sources
+You’ll find real-world-style CSVs in `/data`:
+- begin_inventory.csv
+- end_inventory.csv
+- purchases.csv
+- purchase_prices.csv
+- sales.csv
+- vendor_invoice.csv
 
-Simulated wholesale industry data stored across multiple CSVs (in the `data/` folder):
+All of these get loaded into a single SQLite database for analysis.
 
-- `begin_inventory.csv`
-- `end_inventory.csv`
-- `purchases.csv`
-- `purchase_prices.csv`
-- `sales.csv`
-- `vendor_invoice.csv`
+## Key Files
 
-These were inserted into a SQLite database and used to simulate a real ETL pipeline.
+- `Ingestion.ipynb` — Loads and logs all data into SQLite
+- `Exploratory Data Analysis.ipynb` — Cleans, explores, and answers the big questions
+- `inventory.db` — The database with everything in one place
+- `Workflow.png` — The project at a glance
+- `logs/` — Keeps track of what happened during ingestion
+- `data/` — All the raw CSVs
 
----
+## Skills on Display
 
-## Scripts & Notebooks
-
-- **Ingestion.ipynb**: Jupyter notebook for ingesting CSVs into SQLite with logging and chunked loading for large files.
-- **Exploratory Data Analysis.ipynb**: Jupyter notebook for data cleaning, feature engineering, and answering research questions.
-- **inventory.db**: SQLite database containing all ingested and processed data tables.
-- **logs/**: Directory for log files generated during ingestion and processing.
-- **data/**: Contains all raw CSV data files.
-- **Workflow.png**: Visual diagram of the project workflow.
-
----
-
-## Key Skills Demonstrated
-
-- End-to-end project structuring
-- SQL for complex data joins and aggregations
-- Python scripting with logging and functions
-- Power BI dashboarding
-- Business problem solving with data
-- Report writing with real, actionable insights
-
----
-
-## Final Notes
-
-- This project shows how to integrate multiple tools into one pipeline.
-- It's designed to be **portfolio-worthy** and align with what hiring managers expect.
-- All analysis and insights are tied directly to the defined business problem.
-
----
+- Real SQL for joins and aggregations
+- Python scripting (with logging, chunking, and error handling)
+- Data cleaning and EDA in Pandas
+- Building a dashboard in Power BI
+- Translating business problems into data solutions
 
 ## Folder Structure
 
@@ -130,4 +87,8 @@ End-to-End-Vendor-Insights-1/
 ├── README.md                       # Project documentation
 └── .gitignore                      # Git ignore rules
 ```
+
+## The Bottom Line
+
+This isn’t a toy project. It’s built to show you can handle real data, answer real questions, and deliver insights that matter. If you want to see how I work with data from start to finish, this is it.
 
