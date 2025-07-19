@@ -9,3 +9,6 @@ inventory.db
 
 # Local data files
 data/
+
+logs/
+
