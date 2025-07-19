@@ -2,10 +2,7 @@
 
 ## Overview
 
-This is a real-world, company-standard data analytics project focused on analyzing vendor performance in the wholesale and retail industry. It integrates multiple tools — SQL, Python (Pandas), and Power BI — to simulate how a professional data analyst solves business problems end-to-end.
-
-> This is **not** a beginner project. It mirrors how analysts in actual companies handle large datasets, optimize SQL queries, build dashboards, and derive insights that directly impact business decisions.
-
+This project analyzes vendor performance in the wholesale and retail space. I used SQL, Python (Pandas), and Power BI to handle the full workflow — from cleaning raw data to generating business insights — the way it's done in actual industry settings.
 ---
 
 ## Business Problem
