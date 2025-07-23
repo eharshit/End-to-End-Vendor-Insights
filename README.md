@@ -135,7 +135,7 @@ Interactive Power BI dashboard covering sales, purchases, margins, vendor health
 
 1. Clone the repo  
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/eharshit/End-to-End-Vendor-Insights
    ```
 2. Install dependencies  
    ```bash
