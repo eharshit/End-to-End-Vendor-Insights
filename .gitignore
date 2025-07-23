@@ -1,17 +1,20 @@
-# Jupyter notebook checkpoints
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
 # VS Code settings
 .vscode/
 
-# SQLite DB file
+# SQLite database
 inventory.db
 
+# CSV output
 final_table.csv
-# ignore log
-logs/ 
 
+# Logs directory
+logs/
 
+# Compiled Python files
 *.pyc
-#
-__pycache__/
+
+# Data directory
+.data/
