@@ -7,7 +7,11 @@
 # SQLite DB file
 inventory.db
 
-# Local data files
-data/
+final_table.csv
 # ignore log
 logs/ 
+
+
+*.pyc
+#
+__pycache__/
